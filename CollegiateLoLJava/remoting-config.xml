@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+    class="flex.messaging.services.RemotingService">
+
+    <adapters>
+        <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter" default="true"/>
+    </adapters>
+
+    <default-channels>
+        <channel ref="my-amf"/>
+    </default-channels>
+	
+	<!--
+	On the back end, we're mapping destination ID's to java classes, it knows to look for the method in the specific class.
+	All my methods that will be directly invokable from my client will be in this class LoLService
+	-->
+	
+	<destination id="LoLService">
+		<properties>
+			<source>lolService.LoLService</source>
+		</properties>
+	</destination>
+	
+    <destination id="product">
+        <properties>
+            <source>flex.samples.product.ProductService</source>
+        </properties>
+    </destination>
+    
+    <destination id="productService">
+        <properties>
+            <source>flex.samples.dcd.product.ProductService</source>
+        </properties>
+    </destination>
+
+    <destination id="chat-room-service">
+        <properties>
+            <source>flex.samples.runtimeconfig.ChatRoomService</source>
+            <scope>application</scope>
+        </properties>
+    </destination>
+
+    <destination id="flex-client-qos-config" channels="per-client-qos-polling-amf">
+        <properties>
+            <source>flex.samples.qos.FlexClientConfigService</source>
+        </properties>
+    </destination>
+    
+  </service>
