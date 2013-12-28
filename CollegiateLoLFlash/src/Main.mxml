@@ -3,14 +3,14 @@
     xmlns:fx="http://ns.adobe.com/mxml/2009"
     xmlns:mx="library://ns.adobe.com/flex/mx"
     xmlns:local="*"
-    width="700" height="547" backgroundColor="0xDDDDDD" applicationComplete="initDone()"
+    width="700" height="547" backgroundColor="0x000033" applicationComplete="initDone()"
 >
 
 
     <fx:Declarations>
         <mx:RemoteObject id="remoteObject" destination="LoLService"/>
+		<mx:UIComponent id="frameContainer" />
     </fx:Declarations>
 
-    <mx:UIComponent id="frameContainer" />
 
 </local:CollegiateLoL>
